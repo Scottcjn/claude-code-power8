@@ -79,10 +79,26 @@ Claude Code auto-detects platform via `process.arch`. On ppc64le, it will use th
 - **OS**: Ubuntu 20.04 LTS (last POWER8-supported)
 - **Node**: v20.10.0 ppc64le
 
+## Attribution
+
+**First POWER8 port of Claude Code. Real hardware, real testing, real results.**
+
+If you use this project, please give credit:
+
+```
+Claude Code POWER8 Port by Scott (Scottcjn)
+https://github.com/Scottcjn/claude-code-power8
+```
+
+If this helped you, please:
+- ⭐ **Star this repo** - It helps others find it
+- 📝 **Credit in your project** - Keep the attribution
+- 🔗 **Link back** - Share the love
+
 ## Credits
 
 - [Anthropic](https://anthropic.com) - Claude Code
-- [Elyan Labs](https://github.com/scottboudreaux) - POWER8 Port
+- [Elyan Labs](https://github.com/Scottcjn) - POWER8 Port
 
 ## License
 
@@ -91,4 +107,9 @@ This port adds only the ppc64le ripgrep binary (MIT licensed).
 
 ## Related Projects
 
-- [llama.cpp POWER8 Port](https://github.com/scottboudreaux/llama-cpp-power8) - LLM inference with AltiVec/VSX optimizations
+- [llama.cpp POWER8 Port](https://github.com/Scottcjn/llama-cpp-power8) - LLM inference with AltiVec/VSX optimizations
+- [ppc-tiger-tools](https://github.com/Scottcjn/ppc-tiger-tools) - PowerPC G4/G5 tools for Tiger/Leopard
+
+---
+
+*"Claude Code on your enterprise POWER8. Because why not?"*
