@@ -14,7 +14,7 @@ This is a working port of Anthropic's Claude Code CLI tool for IBM POWER8 (ppc64
 
 The IBM POWER8 S824 server offers:
 - 128 hardware threads (dual 8-core SMT8)
-- Up to 576GB RAM
+- Up to 4TB RAM Numa acceleration.
 - VSX (AltiVec) vector processing
 - Perfect for running local LLMs alongside Claude Code
 
