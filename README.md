@@ -10,6 +10,42 @@ This is a working port of Anthropic's Claude Code CLI tool for IBM POWER8 (ppc64
 - Native ppc64le ripgrep binary for fast code search
 - Node.js 20.x compatible
 
+## Pre-Built Binaries
+
+Download from the `binaries/` directory:
+
+| File | Size | Description |
+|------|------|-------------|
+| `ripgrep-ppc64le-linux.tar.gz` | 2.0 MB | Just the ripgrep binary (add to existing install) |
+| `claude-code-2.0.70-ppc64le.tar.gz` | 27 MB | Complete modified package (ready to install) |
+
+### Quick Install (Full Package)
+
+```bash
+# Download and extract
+tar -xzf claude-code-2.0.70-ppc64le.tar.gz
+cd claude-code
+
+# Install globally
+sudo npm install -g .
+
+# Or install locally
+npm install .
+```
+
+### Add ppc64le to Existing Install
+
+If you already have Claude Code installed, just add the ripgrep binary:
+
+```bash
+# Find your Claude Code installation
+npm list -g @anthropic-ai/claude-code
+
+# Extract ripgrep to vendor directory
+tar -xzf ripgrep-ppc64le-linux.tar.gz
+sudo cp -r ppc64le-linux /usr/lib/node_modules/@anthropic-ai/claude-code/vendor/ripgrep/
+```
+
 ## Why POWER8?
 
 The IBM POWER8 S824 server offers:
@@ -58,18 +94,68 @@ The IBM POWER8 S824 server offers:
 
 ## Technical Notes
 
-### Ripgrep for ppc64le
+### NPM Package Modifications
 
-The included `rg` binary was compiled from source for ppc64le:
+POWER8 (ppc64le) is **not officially supported** by Claude Code. The following modifications were made to enable support:
 
-```bash
-# Build ripgrep for ppc64le
-cargo build --release
+#### 1. Ripgrep Binary Added
+
+The stock Claude Code package includes ripgrep binaries for:
+- `x64-linux`, `x64-darwin`, `x64-win32`
+- `arm64-linux`, `arm64-darwin`
+
+We added a new directory with a ppc64le-compiled ripgrep:
+
+```
+vendor/ripgrep/ppc64le-linux/rg   # ELF 64-bit PowerPC binary
 ```
 
-### Platform Detection
+**How to build ripgrep for ppc64le:**
+```bash
+# On POWER8 Linux (Ubuntu 20.04)
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+source ~/.cargo/env
+git clone https://github.com/BurntSushi/ripgrep
+cd ripgrep
+cargo build --release
+# Binary at: target/release/rg
+```
 
-Claude Code auto-detects platform via `process.arch`. On ppc64le, it will use the `vendor/ripgrep/ppc64le-linux/rg` binary.
+#### 2. Platform Detection (Already Works!)
+
+Node.js returns `process.arch === 'ppc64'` on POWER8. The Claude Code cli.js uses this to construct the path:
+
+```javascript
+// Pseudo-code of how Claude Code detects platform:
+const arch = process.arch;           // 'ppc64' on POWER8
+const platform = process.platform;   // 'linux'
+const rgPath = `vendor/ripgrep/${arch === 'ppc64' ? 'ppc64le' : arch}-${platform}/rg`;
+```
+
+**No code modification needed** - just adding the binary directory is sufficient because the detection logic already handles non-standard architectures gracefully.
+
+#### 3. Sharp Image Library (Optional)
+
+The `@img/sharp-*` dependencies in package.json don't include ppc64le:
+```json
+"@img/sharp-linux-x64": "^0.33.5",
+"@img/sharp-linux-arm64": "^0.33.5",
+// No ppc64le version exists
+```
+
+**Workaround**: Sharp is optional for Claude Code. Image processing features may be limited but core functionality works.
+
+### Ripgrep Build Details
+
+```bash
+# The included binary was built on:
+# - Ubuntu 20.04 LTS (POWER8)
+# - Rust 1.75.0
+# - ripgrep 14.1.0
+$ file vendor/ripgrep/ppc64le-linux/rg
+ELF 64-bit LSB pie executable, 64-bit PowerPC or cisco 7500,
+OpenPOWER ELF V2 ABI, version 1 (SYSV), dynamically linked
+```
 
 ## Tested On
 
