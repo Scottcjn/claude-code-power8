@@ -1,3 +1,5 @@
+[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0) [![POWER8](https://img.shields.io/badge/IBM-POWER8-red)](https://github.com/Scottcjn/claude-code-power8) [![Claude](https://img.shields.io/badge/Claude-Code-purple)](https://claude.ai)
+
 # Claude Code for IBM POWER8/ppc64le
 
 **The First POWER8 Port of Claude Code!**
