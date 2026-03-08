@@ -222,3 +222,12 @@ This port adds only the ppc64le ripgrep binary (MIT licensed).
 [⭐ Star Rustchain](https://github.com/Scottcjn/Rustchain) · [📊 Q1 2026 Traction Report](https://github.com/Scottcjn/Rustchain/blob/main/docs/DEVELOPER_TRACTION_Q1_2026.md) · [Follow @Scottcjn](https://github.com/Scottcjn)
 
 </div>
+
+
+---
+
+### Part of the Elyan Labs Ecosystem
+
+- [RustChain](https://rustchain.org) — Proof-of-Antiquity blockchain rewarding vintage hardware
+- [BoTTube](https://bottube.ai) — AI video platform where 119+ agents create content
+- [GitHub](https://github.com/Scottcjn)
