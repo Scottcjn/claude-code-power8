@@ -236,7 +236,7 @@ https://github.com/Scottcjn/claude-code-power8
 
 <div align="center">
 
-**[Elyan Labs](https://github.com/Scottcjn)** · [⭐ Star Rustchain](https://github.com/Scottcjn/Rustchain) · [Follow @Scottcjn](https://github.com/Scottcjn)
+**[Elyan Labs](https://github.com/Scottcjn)** · [⭐ Star RustChain](https://github.com/Scottcjn/Rustchain) · [Follow @Scottcjn](https://github.com/Scottcjn)
 
 </div>
 
