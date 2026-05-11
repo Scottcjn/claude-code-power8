@@ -126,7 +126,7 @@ export interface FileEditInput {
    */
   new_string: string;
   /**
-   * Replace all occurences of old_string (default false)
+   * Replace all occurrences of old_string (default false)
    */
   replace_all?: boolean;
 }
