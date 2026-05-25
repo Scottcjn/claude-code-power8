@@ -42,7 +42,7 @@
     "@img/sharp-linux-x64": "^0.33.5",
     "@img/sharp-linuxmusl-arm64": "^0.33.5",
     "@img/sharp-linuxmusl-x64": "^0.34.5",
-    "@img/sharp-win32-x64": "^0.33.5"
+    "@img/sharp-win32-x64": "^0.34.5"
   },
   "deprecated": false,
   "description": "Use Claude, Anthropic's AI assistant, right from your terminal. Claude can understand your codebase, edit files, run terminal commands, and handle entire workflows for you.",
@@ -60,7 +60,7 @@
     "@img/sharp-linux-x64": "^0.33.5",
     "@img/sharp-linuxmusl-arm64": "^0.33.5",
     "@img/sharp-linuxmusl-x64": "^0.34.5",
-    "@img/sharp-win32-x64": "^0.33.5"
+    "@img/sharp-win32-x64": "^0.34.5"
   },
   "scripts": {
     "prepare": "node -e \"if (!process.env.AUTHORIZED) { console.error('ERROR: Direct publishing is not allowed.\\nPlease see the release workflow documentation to publish this package.'); process.exit(1); }\""
