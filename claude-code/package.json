@@ -36,7 +36,7 @@
   "bundleDependencies": false,
   "dependencies": {
     "@img/sharp-darwin-arm64": "^0.34.5",
-    "@img/sharp-darwin-x64": "^0.34.5",
+    "@img/sharp-darwin-x64": "^0.35.3",
     "@img/sharp-linux-arm": "^0.33.5",
     "@img/sharp-linux-arm64": "^0.35.3",
     "@img/sharp-linux-x64": "^0.33.5",
@@ -54,7 +54,7 @@
   "name": "@anthropic-ai/claude-code",
   "optionalDependencies": {
     "@img/sharp-darwin-arm64": "^0.34.5",
-    "@img/sharp-darwin-x64": "^0.34.5",
+    "@img/sharp-darwin-x64": "^0.35.3",
     "@img/sharp-linux-arm": "^0.33.5",
     "@img/sharp-linux-arm64": "^0.35.3",
     "@img/sharp-linux-x64": "^0.33.5",
